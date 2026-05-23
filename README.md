@@ -1,6 +1,6 @@
 # DocVault Documentation Generator
 
-[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-DocVault%20Documentation%20Generator-24292e?style=flat&logo=github)](https://github.com/marketplace)
+[![GitHub Marketplace](https://img.shields.io/badge/Marketplace-DocVault%20Documentation%20Generator-24292e?style=flat&logo=github)](https://github.com/marketplace/actions/docvault-documentation-generator)
 
 **DocVault** — AI-powered documentation for entire codebases, websites, and apps. Built on the [Cursor SDK](https://cursor.com/docs/sdk) (Composer 2.5).
 
