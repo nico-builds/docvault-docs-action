@@ -1,0 +1,62 @@
+name: DocVault Documentation Generator
+description: 'Audit codebases and generate docs via Cursor SDK. Optional single-page HTML UI with clickable TOC in .docvault/.'
+author: nico-builds
+
+branding:
+  icon: book-open
+  color: blue
+
+inputs:
+  cursor-api-key:
+    description: >-
+      Cursor API key from https://cursor.com/dashboard/integrations.
+      Store as repository secret CURSOR_API_KEY.
+    required: true
+  mode:
+    description: 'plan (audit only) or write (generate documentation files)'
+    required: false
+    default: plan
+  ui:
+    description: 'If true, generate .docvault/ui/index.html with clickable TOC (implies write)'
+    required: false
+    default: 'false'
+  audience:
+    description: 'developers, end-users, or both'
+    required: false
+    default: both
+  output-dir:
+    description: 'Documentation output directory'
+    required: false
+    default: .docvault
+  exclude:
+    description: 'Comma-separated path prefixes to exclude from analysis'
+    required: false
+    default: ''
+  working-directory:
+    description: 'Project path (default GitHub workspace root)'
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.12'
+
+    - name: Install Cursor SDK
+      shell: bash
+      run: pip install 'cursor-sdk>=0.1.5'
+
+    - name: Run DocVault documentation generator
+      shell: bash
+      env:
+        CURSOR_API_KEY: ${{ inputs.cursor-api-key }}
+        DOCS_MODE: ${{ inputs.mode }}
+        DOCS_UI: ${{ inputs.ui }}
+        DOCS_AUDIENCE: ${{ inputs.audience }}
+        DOCS_OUTPUT_DIR: ${{ inputs.output-dir }}
+        DOCS_EXCLUDE: ${{ inputs.exclude }}
+        DOCS_WORKING_DIRECTORY: ${{ inputs.working-directory }}
+      run: bash "${{ github.action_path }}/run.sh"

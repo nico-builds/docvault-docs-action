@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200" role="img" aria-label="DocVault logo">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2563eb"/>
+      <stop offset="100%" stop-color="#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="200" height="200" rx="36" fill="url(#g)"/>
+  <path d="M56 52 L144 52 L144 148 L56 148 Z" fill="none" stroke="#dbeafe" stroke-width="6" rx="4"/>
+  <path d="M72 76 L128 76 M72 96 L128 96 M72 116 L112 116" stroke="#93c5fd" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="148" cy="56" r="14" fill="#fde68a"/>
+  <path d="M148 46 L148 42 M148 70 L148 66 M158 56 L162 56 M134 56 L138 56" stroke="#fde68a" stroke-width="2" stroke-linecap="round"/>
+</svg>
